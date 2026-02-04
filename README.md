@@ -1,0 +1,31 @@
+# Prueba Practica Backend GrupoApok (Graph API) - Solución
+
+Esta es una solución a la prueba técnica de grupoapok para desarrolladores Backend (PHP/Laravel), la solución consiste en una API REST para la gestión de estructuras de árboles (nodos), con soporte para internacionalización y conversión de zona horaria.
+
+## 🛠 Tecnologías
+- **Framework:** Laravel 12.49.0 / PHP 8.2
+- **Motor DB:** MySQL 8.0 (Soporte para CTEs)
+- **Librería Clave:** `staudenmeir/laravel-adjacency-list` para gestión eficiente de grafos.
+
+## ⚙️ Instalación
+1. **Clonar y Preparar:**
+   ```bash
+   ```
+   
+2. **Migrar y Seed (Crucial):**
+   ```bash
+    php artisan migrate --seed
+   ```
+   
+## 🔌 Documentación de la API
+
+**Headers Requeridos para Funcionalidades Especiales**
+- `Accept-Language`: `en` | `es` - Traduce el campo `title`.
+- `X-Timezone`: Ejemplo `America/Caracas` o `Europe/Madrid`
+
+**Endpoints**
+- `POST /api/v1/nodes`: Crea un nodo. Envía `{"parent": id}` o `{"parent": null}`.
+- `GET /api/v1/nodes/{id}/parents?depth=-n`: Lista los ancestros del nodo (`solución 1` a `Listar nodos padres`).
+- `GET /api/v1/nodes/root`: Lista los nodos raiz (`solución 2` a `Listar nodos padres`).
+- `GET /api/v1/nodes/{id}/children?depth=n&toTree=true`: Lista hijos con profundidad y formato de árbol opcional.
+- `DELETE /api/v1/nodes/{id}`: Elimina si no tiene hijos.

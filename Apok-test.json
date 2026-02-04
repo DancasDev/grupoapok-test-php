@@ -1,0 +1,115 @@
+{
+  "name": "Apok-test",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "V1",
+      "items": [
+        {
+          "type": "http",
+          "name": "Listar nodos hijos a partir del padre",
+          "seq": 2,
+          "request": {
+            "url": "{{host}}/v1/nodes",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Crear nodo",
+          "seq": 1,
+          "request": {
+            "url": "{{host}}/v1/nodes",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": "es",
+                "enabled": false
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"parent\": 28\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Eliminar nodo",
+          "seq": 3,
+          "request": {
+            "url": "{{host}}/v1/nodes/1",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "activeEnvironmentUid": "LIi0mlq4F4cDp1D6w80br",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "host",
+          "value": "http://127.0.0.1:1000/api",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "local"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Apok-test",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
