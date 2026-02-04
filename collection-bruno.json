@@ -1,0 +1,222 @@
+{
+  "name": "Solucion Jose D. Castillo",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "V1",
+      "items": [
+        {
+          "type": "http",
+          "name": "Crear nodo",
+          "seq": 1,
+          "request": {
+            "url": "{{host}}/v1/nodes",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": "es",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"parent\": null\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Eliminar nodo",
+          "seq": 5,
+          "request": {
+            "url": "{{host}}/v1/nodes/1",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": "es",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Listar nodos hijos a partir del padre",
+          "seq": 4,
+          "request": {
+            "url": "{{host}}/v1/nodes/1/children?depth=2&toTree=true",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": "es",
+                "enabled": true
+              },
+              {
+                "name": "X-Timezone",
+                "value": "Europe/Madrid",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "depth",
+                "value": "2",
+                "type": "query",
+                "enabled": true
+              },
+              {
+                "name": "toTree",
+                "value": "true",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Listar nodos padres 1",
+          "seq": 2,
+          "request": {
+            "url": "{{host}}/v1/nodes/5/parents?depth=-2",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "X-Timezone",
+                "value": "America/Chicago",
+                "enabled": true
+              },
+              {
+                "name": "Accept-Language",
+                "value": "es",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "name": "depth",
+                "value": "-2",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Listar nodos padres 2",
+          "seq": 3,
+          "request": {
+            "url": "{{host}}/v1/nodes/root",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "X-Timezone",
+                "value": "Europe/Madrid",
+                "enabled": true
+              },
+              {
+                "name": "Accept-Language",
+                "value": "es",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "activeEnvironmentUid": "B5GZI9lNJnsssLzwK2JYw",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "host",
+          "value": "http://127.0.0.1:8000/api",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "local"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Apok-test",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}

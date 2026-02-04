@@ -1,0 +1,227 @@
+{
+  "info": {
+    "name": "Solucion Jose D. Castillo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "V1",
+      "item": [
+        {
+          "name": "Crear nodo",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept-Language",
+                "value": "es",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{host}}/v1/nodes",
+              "protocol": "",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "v1",
+                "nodes"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"parent\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Eliminar nodo",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept-Language",
+                "value": "es",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{host}}/v1/nodes/1",
+              "protocol": "",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "v1",
+                "nodes",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Listar nodos hijos a partir del padre",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept-Language",
+                "value": "es",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "X-Timezone",
+                "value": "Europe/Madrid",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{host}}/v1/nodes/1/children?depth=2&toTree=true",
+              "protocol": "",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "v1",
+                "nodes",
+                "1",
+                "children?depth=2&toTree=true"
+              ],
+              "query": [
+                {
+                  "key": "depth",
+                  "value": "2"
+                },
+                {
+                  "key": "toTree",
+                  "value": "true"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Listar nodos padres 1",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Timezone",
+                "value": "America/Chicago",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "Accept-Language",
+                "value": "es",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{host}}/v1/nodes/5/parents?depth=-2",
+              "protocol": "",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "v1",
+                "nodes",
+                "5",
+                "parents?depth=-2"
+              ],
+              "query": [
+                {
+                  "key": "depth",
+                  "value": "-2"
+                }
+              ],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Listar nodos padres 2",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Timezone",
+                "value": "Europe/Madrid",
+                "disabled": false,
+                "type": "default"
+              },
+              {
+                "key": "Accept-Language",
+                "value": "es",
+                "disabled": false,
+                "type": "default"
+              }
+            ],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{host}}/v1/nodes/root",
+              "protocol": "",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "v1",
+                "nodes",
+                "root"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "host",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
